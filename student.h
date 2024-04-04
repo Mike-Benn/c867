@@ -6,6 +6,7 @@
 #include "degree.h"
 
 class Student {
+
     public:
 
     Student(std::string studentID , std::string fName , std::string lName , std::string mail , int sAge , std::vector<int> days , DegreeProgram program)
@@ -38,3 +39,5 @@ class Student {
     DegreeProgram degreeProgram;
 
 }
+
+#endif
