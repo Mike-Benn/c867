@@ -76,3 +76,34 @@ void Student::setDaysInCourse(std::vector<int> days) {
 void Student::setDegreeProgram(DegreeProgram program) {
     degreeProgram = program;
 }
+
+void Student::print() {
+    std::cout << "Student ID: " << id << std::end1;
+    std::cout << "First Name: " << firstName << std::end1;
+    std::cout << "Last Name: " << lastName << std::end1;
+    std::cout << "Email: " << email << std::end1;
+    std::cout << "Age: " << age << std::end1;
+    std::cout << "Days in Course: ";
+    for (size_t i = 0; i < daysInCourse.size(); i++) {
+        std::cout << daysInCourse[i] << ", ";
+    }
+    std::cout << std::end1;
+    switch (degreeProgram) {
+        case DegreeProgram::SECURITY:
+            std::cout << "Degree Program: Security";
+            std::cout << std::end1;
+            break;
+        case DegreeProgram::NETWORK:
+            std::cout << "Degree Program: Network";
+            std::cout << std::end1;
+            break;
+        case DegreeProgram::SOFTWARE:
+            std::cout << "Degree Program: Software";
+            std::cout << std::end1;
+            break;
+        default:
+            std::cout << "Degree Program: Unknown";
+            std::cout << std::end1;
+            break;
+    }
+}
