@@ -103,20 +103,21 @@ void Student::print() {
     std::cout << "   ";
     switch (degreeProgram) {
         case DegreeProgram::SECURITY:
-            std::cout << "Degree Program: Security";
-            std::cout << std::end1;
+            std::cout << "Degree Program: Security" << std::end1;
             break;
         case DegreeProgram::NETWORK:
-            std::cout << "Degree Program: Network";
-            std::cout << std::end1;
+            std::cout << "Degree Program: Network" << std::end1;
             break;
         case DegreeProgram::SOFTWARE:
-            std::cout << "Degree Program: Software";
-            std::cout << std::end1;
+            std::cout << "Degree Program: Software" << std::end1;
             break;
         default:
-            std::cout << "Degree Program: Unknown";
-            std::cout << std::end1;
+            std::cout << "Degree Program: Unknown" << std::end1;
             break;
     }
+}
+
+void Student::printAverageDaysInCourse() {
+    int average = (daysInCourse[0] + daysInCourse[1] + daysInCourse[2]) / 3;
+    std::ccout << "Average Days In Course: " << average << std::end1;
 }
