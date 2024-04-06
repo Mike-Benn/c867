@@ -4,7 +4,8 @@
 enum DegreeProgram {
     SECURITY,
     NETWORK,
-    SOFTWARE
+    SOFTWARE,
+    EMPTY
 };
 
 #endif
