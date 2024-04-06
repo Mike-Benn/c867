@@ -9,6 +9,7 @@ class Student {
 
     public:
 
+        Student();
         Student(std::string studentID , std::string fName , std::string lName , std::string mail , int sAge , std::array<int, 3> , DegreeProgram program);
 
         
