@@ -30,7 +30,7 @@ class Student {
         void setDegreeProgram(DegreeProgram program);
         
         void print();
-        void printAverageDays();
+        void printAverageDaysInCourse();
 
     private:
 
