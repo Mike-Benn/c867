@@ -2,21 +2,22 @@
 #define STUDENT_H
 
 #include <string>
-#include <vector>
+#include <array>
 #include "degree.h"
 
 class Student {
 
     public:
 
-    Student(std::string studentID , std::string fName , std::string lName , std::string mail , int sAge , std::vector<int> days , DegreeProgram program)
+    Student(std::string studentID , std::string fName , std::string lName , std::string mail , int sAge , std::array<int, 3> , DegreeProgram program);
+
     
     std::string getID() const;
     std::string getFirstName() const;
     std::string getLastName() const;
     std::string getEmail() const;
     int getAge() const;
-    std::vector getDaysInCourse() const;
+    std::array<int, 3> getDaysInCourse() const;
     DegreeProgram getDegreeProgram() const;
 
     void setID(std::string studentID);
@@ -24,8 +25,9 @@ class Student {
     void setLastName(std::string lName);
     void setEmail(std::string mail);
     void setAge(int sAge);
-    void setDaysInCourse(std::vector<int> days);
+    void setDaysInCourse(std::array<int, 3> days);
     void setDegreeProgram(DegreeProgram program);
+    
     void print();
 
     private:
@@ -35,7 +37,7 @@ class Student {
     std::string lastName;
     std::string email;
     int age;
-    std::vector<int> daysInCourse;
+    std::array<int, 3> daysInCourse;
     DegreeProgram degreeProgram;
 
 }
