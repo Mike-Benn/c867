@@ -8,7 +8,9 @@
 
 class Roster {
     public:
-    
+
+        Roster();
+
         void add(Student student , int position);
         void remove(std::string studentID);
         void printAll();
