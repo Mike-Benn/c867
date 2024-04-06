@@ -1,7 +1,7 @@
 #include "student.h"
 #include "degree.h"
 #include <string>
-#include <vector>
+#include <array>
 #include <iostream>
 
 Student::Student(std::string studentID,
@@ -9,7 +9,7 @@ Student::Student(std::string studentID,
                  std::string lName, 
                  std::string mail, 
                  int sAge, 
-                 std::vector<int> days, 
+                 std::array<int, 3> days, 
                  DegreeProgram program) {
     
     id = studentID;
@@ -41,7 +41,7 @@ int getAge() const {
     return age;
 }
 
-std::vector<int> getDaysInCourse() const {
+std::array<int, 3> getDaysInCourse() const {
     return daysInCourse;
 }
 
@@ -69,7 +69,7 @@ void Student::setAge(int sAge) {
     age = sAge;
 }
 
-void Student::setDaysInCourse(std::vector<int> days) {
+void Student::setDaysInCourse(std::array<int, 3> days) {
     daysInCourse = days;
 }
 
@@ -84,7 +84,7 @@ void Student::print() {
     std::cout << "Email: " << email << std::end1;
     std::cout << "Age: " << age << std::end1;
     std::cout << "Days in Course: ";
-    for (size_t i = 0; i < daysInCourse.size(); i++) {
+    for (size_t i = 0; i < 3; i++) {
         std::cout << daysInCourse[i] << ", ";
     }
     std::cout << std::end1;
