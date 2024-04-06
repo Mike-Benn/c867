@@ -91,16 +91,16 @@ void Student::setDegreeProgram(DegreeProgram program) {
 }
 
 void Student::print() {
-    std::cout << "Student ID: " << id << std::end1;
-    std::cout << "First Name: " << firstName << std::end1;
-    std::cout << "Last Name: " << lastName << std::end1;
-    std::cout << "Email: " << email << std::end1;
-    std::cout << "Age: " << age << std::end1;
+    std::cout << "Student ID: " << id << "   ";
+    std::cout << "First Name: " << firstName << "   ";
+    std::cout << "Last Name: " << lastName << "   ";
+    std::cout << "Email: " << email << "   ";
+    std::cout << "Age: " << age << "   ";
     std::cout << "Days in Course: ";
     for (size_t i = 0; i < 3; i++) {
         std::cout << daysInCourse[i] << ", ";
     }
-    std::cout << std::end1;
+    std::cout << "   ";
     switch (degreeProgram) {
         case DegreeProgram::SECURITY:
             std::cout << "Degree Program: Security";
