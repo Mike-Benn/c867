@@ -1,9 +1,21 @@
-
-#include "student.h"
-#include "degree.h"
 #include <string>
 #include <array>
 #include <iostream>
+#include "student.h"
+#include "degree.h"
+
+
+
+Student::Student() {
+    : id("0"),
+      firstName("EMPTY"),
+      lastName("EMPTY"),
+      email("EMPTY"),
+      age(0),
+      daysInCourse(std::array<int, 3>),
+      degreeProgram(DegreeProgram::EMPTY);
+
+}
 
 Student::Student(std::string studentID,
                  std::string fName,
