@@ -2,13 +2,19 @@
 #include <array>
 #include <iostream>
 #include "student.h"
-#include "student.cpp"
 #include "degree.h"
 #include "roster.h"
 
-Roster::Roster() : classRosterArray(std::array<Student, 5>) {}
+Roster::Roster() : classRosterArray({}) {}
+Roster::~Roster() {
+    
+}
 
-void Roster::add(Student student , int position) {
+std::array<Student, 5> Roster::getRoster() const {
+    return classRosterArray;
+}
+
+void Roster::add(Student student, int position) {
     classRosterArray[position] = student;
 }
 
@@ -22,7 +28,7 @@ void Roster::remove(std::string studentID) {
         }
     }
     if (counter < 1) {
-        std::cout << "Student was not found!" << std::end1;
+        std::cout << "Student was not found!" << std::endl;
     }
 }
 
@@ -32,7 +38,7 @@ void Roster::printAll() {
     }
 }
 
-void printAverageDaysInCourse(std::string studentID) {
+void Roster::printAverageDaysInCourse(std::string studentID) {
     for (size_t i = 0; i < 5; i++) {
         if (classRosterArray[i].getID() == studentID) {
             classRosterArray[i].printAverageDaysInCourse();
@@ -40,7 +46,7 @@ void printAverageDaysInCourse(std::string studentID) {
     }
 }
 
-void printInvalidEmails() {
+void Roster::printInvalidEmails() {
     for (size_t i = 0; i < 5; i++) {
         int atCheck = 0;
         int periodCheck = 0;
@@ -49,23 +55,26 @@ void printInvalidEmails() {
         for (size_t i = 0; i < email.length(); i++) {
             if (email[i] == ' ') {
                 invalidCheck++;
-                break
-            } else if (email[i] == '@' && atCheck > 0) {
+                break;
+            }
+            else if (email[i] == '@' && atCheck > 0) {
                 invalidCheck++;
                 break;
-            } else if (email[i] == '@' && atCheck == 0) {
+            }
+            else if (email[i] == '@' && atCheck == 0) {
                 atCheck++;
-            } else if (email[i] == '.') {
+            }
+            else if (email[i] == '.') {
                 periodCheck++;
             }
         }
         if (invalidCheck > 0 || periodCheck < 1 || atCheck < 1) {
-            std::cout << "" << email << " is an invalid email address!" << std::end1;
-        }   
+            std::cout << "" << email << " is an invalid email address!" << std::endl;
+        }
     }
 }
 
-void printByDegreeProgram(DegreeProgram program) {
+void Roster::printByDegreeProgram(DegreeProgram program) {
     int counter = 0;
     for (size_t i = 0; i < 5; i++) {
         if (classRosterArray[i].getDegreeProgram() == program) {
@@ -74,6 +83,6 @@ void printByDegreeProgram(DegreeProgram program) {
         }
     }
     if (counter < 1) {
-        std::cout << "There are no students with that degree program!" << std::end1;
+        std::cout << "There are no students with that degree program!" << std::endl;
     }
 }

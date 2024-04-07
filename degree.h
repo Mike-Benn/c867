@@ -1,5 +1,5 @@
 #ifndef DEGREE_H
-#define FILE_H
+#define DEGREE_H
 
 enum DegreeProgram {
     SECURITY,

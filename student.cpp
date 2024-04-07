@@ -6,25 +6,26 @@
 
 
 
-Student::Student() {
+Student::Student() 
     : id("0"),
-      firstName("EMPTY"),
-      lastName("EMPTY"),
-      email("EMPTY"),
-      age(0),
-      daysInCourse(std::array<int, 3>),
-      degreeProgram(DegreeProgram::EMPTY);
+        firstName("EMPTY"),
+        lastName("EMPTY"),
+        email("EMPTY"),
+        age(0),
+        daysInCourse({0 , 0 , 0}),
+        degreeProgram(DegreeProgram::EMPTY)
+{}
 
-}
+
 
 Student::Student(std::string studentID,
-                 std::string fName,
-                 std::string lName, 
-                 std::string mail, 
-                 int sAge, 
-                 std::array<int, 3> days, 
-                 DegreeProgram program) {
-    
+    std::string fName,
+    std::string lName,
+    std::string mail,
+    int sAge,
+    std::array<int, 3> days,
+    DegreeProgram program) {
+
     id = studentID;
     firstName = fName;
     lastName = lName;
@@ -50,15 +51,15 @@ std::string Student::getEmail() const {
     return email;
 }
 
-int getAge() const {
+int Student::getAge() const {
     return age;
 }
 
-std::array<int, 3> getDaysInCourse() const {
+std::array<int, 3> Student::getDaysInCourse() const {
     return daysInCourse;
 }
 
-DegreeProgram getDegreeProgram() const {
+DegreeProgram Student::getDegreeProgram() const {
     return degreeProgram;
 }
 
@@ -91,33 +92,35 @@ void Student::setDegreeProgram(DegreeProgram program) {
 }
 
 void Student::print() {
-    std::cout << "Student ID: " << id << "   ";
-    std::cout << "First Name: " << firstName << "   ";
-    std::cout << "Last Name: " << lastName << "   ";
-    std::cout << "Email: " << email << "   ";
-    std::cout << "Age: " << age << "   ";
-    std::cout << "Days in Course: ";
-    for (size_t i = 0; i < 3; i++) {
-        std::cout << daysInCourse[i] << ", ";
-    }
-    std::cout << "   ";
-    switch (degreeProgram) {
+    if (id != "0") {
+        std::cout << "Student ID: " << id << "   ";
+        std::cout << "First Name: " << firstName << "   ";
+        std::cout << "Last Name: " << lastName << "   ";
+        std::cout << "Email: " << email << "   ";
+        std::cout << "Age: " << age << "   ";
+        std::cout << "Days in Course: ";
+        for (size_t i = 0; i < 3; i++) {
+            std::cout << daysInCourse[i] << ", ";
+        }
+        std::cout << "   ";
+        switch (degreeProgram) {
         case DegreeProgram::SECURITY:
-            std::cout << "Degree Program: Security" << std::end1;
+            std::cout << "Degree Program: Security" << std::endl;
             break;
         case DegreeProgram::NETWORK:
-            std::cout << "Degree Program: Network" << std::end1;
+            std::cout << "Degree Program: Network" << std::endl;
             break;
         case DegreeProgram::SOFTWARE:
-            std::cout << "Degree Program: Software" << std::end1;
+            std::cout << "Degree Program: Software" << std::endl;
             break;
         default:
-            std::cout << "Degree Program: Unknown" << std::end1;
+            std::cout << "Degree Program: Unknown" << std::endl;
             break;
+        }
     }
 }
 
 void Student::printAverageDaysInCourse() {
     int average = (daysInCourse[0] + daysInCourse[1] + daysInCourse[2]) / 3;
-    std::ccout << firstName <<"'s Average Days In Course: " << average << std::end1;
+    std::cout << firstName << "'s Average Days In Course: " << average << std::endl;
 }

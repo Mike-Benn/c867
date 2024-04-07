@@ -4,25 +4,27 @@
 #include <string>
 #include "degree.h"
 #include "student.h"
-#include "student.cpp"
+
 
 class Roster {
-    public:
+public:
 
-        Roster();
+    Roster();
+    ~Roster();
+    std::array<Student, 5> getRoster() const;
 
-        void add(Student student , int position);
-        void remove(std::string studentID);
-        void printAll();
-        void printAverageDaysInCourse(std::string studentID);
-        void printInvalidEmails();
-        void printByDegreeProgram(DegreeProgram program);
+    void add(Student student, int position);
+    void remove(std::string studentID);
+    void printAll();
+    void printAverageDaysInCourse(std::string studentID);
+    void printInvalidEmails();
+    void printByDegreeProgram(DegreeProgram program);
 
 
-    private:
+private:
 
-        std::array<Student, 5> classRosterArray;
-}
+    std::array<Student, 5> classRosterArray;
+};
 
 
 
