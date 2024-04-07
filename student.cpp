@@ -119,5 +119,5 @@ void Student::print() {
 
 void Student::printAverageDaysInCourse() {
     int average = (daysInCourse[0] + daysInCourse[1] + daysInCourse[2]) / 3;
-    std::ccout << "Average Days In Course: " << average << std::end1;
+    std::ccout << firstName <<"'s Average Days In Course: " << average << std::end1;
 }
