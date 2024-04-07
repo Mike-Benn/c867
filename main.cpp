@@ -1,4 +1,4 @@
-d#include <string>
+#include <string>
 #include <array>
 #include <iostream>
 #include "student.h"
@@ -8,7 +8,7 @@ d#include <string>
 #include "roster.cpp"
 
 int main() {
-    
+
     std::cout << "Scripting and Programming - Applications // C++ // 605798 // Michael Bennett" << std::end1;
     
     int oneDays[] = {30 , 35 , 40};
